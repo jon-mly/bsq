@@ -1,3 +1,7 @@
+Last pb :
+- grid_error func not fully working, check a.out output
+
+
 BSQ :
 
 ================================================== OK
