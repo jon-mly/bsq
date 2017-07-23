@@ -1,5 +1,6 @@
 #include "convert.h"
 #include "data.h"
+#include "grid_error.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -32,10 +33,16 @@ int main(int ac, char **av)
 		begin_list = init_chained(fd);
 
 	get_chars(begin_list);
-	printf("empty : %c, obstacle : %c, filled : %c\n", g_empty, g_obstacle, g_filled);
 
-//		delete_first_line(begin_list);
-//		int x_max = get_x_max(begin_list);
+//	printf("empty : %c, obstacle : %c, filled : %c\n", g_empty, g_obstacle, g_filled);
+
+		delete_first_line(begin_list);
+		int x_max = get_x_max(begin_list);
+		delete_first_line(begin_list);
+
+	if (grid_is_correct(begin_list, x_max))
+		write(1, "OK\n", 3);
+
 //		int y_max = get_y_max(begin_list);
 //		tab = convert_chained(begin_list, x_max, y_max);
 /*

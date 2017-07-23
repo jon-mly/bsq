@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data.h                                             :+:      :+:    :+:   */
+/*   grid_error.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmlynarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/23 21:27:18 by jmlynarc          #+#    #+#             */
-/*   Updated: 2017/07/23 22:38:57 by jmlynarc         ###   ########.fr       */
+/*   Created: 2017/07/23 22:13:41 by jmlynarc          #+#    #+#             */
+/*   Updated: 2017/07/23 22:39:01 by jmlynarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#ifndef GRID_ERROR_H
+# define GRID_ERROR_H
 
 # include "convert.h"
+# include <unistd.h>
 
-typedef struct		s_data
-{
-	char	empty;
-	char	obstacle;
-	char	filled;
-}					t_data;
-
-int			get_x_max(t_list **begin_list);
-int			get_y_max(t_list **begin_list);
-void		get_chars(t_list **begin_list);
+int			grid_is_correct(t_list **begin_list, int x_max);
 
 #endif
