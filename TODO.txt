@@ -1,0 +1,38 @@
+BSQ :
+
+- get the input from a file or the standard input
+* either ac > 1, either read from stdin
+
+- translate the input into a chained list
+* main -> init_chained
+
+- check that the data are correct
+???
+
+- mesure the size (length & height) of the grid from the chained list with \n
+* pre_resolution -> map_is_correct (call to other functions in an other file)
+ + get_x_max
+ + get_y_max
+
+- convert the chained list into an array of char*
+=> pre_resolution -> convert_chained
+ + dealloc : to free the chained list as it is unused from now on
+=> make sure to get rid of the \n => \0 maybe
+
+- begin resolution : find the biggest square which origin will be the char we 
+look at
+=> analyse => biggest_square_from_pos : will get the size of the biggest 
+square without obstacles from the (x,y) pos. given in parameter -> upper left
+corner
+ + a function to manage calls to biggest_square_from_pos for all positions
+
+- rewrite the grid : all char in the previously found square will be replaced
+with 'x' or whatever
+=> analyse -> fill_map : will replace all blank char with 'x'
+
+- display the grid on stdout
+=> FUNCTION NEEDED to print the grid => ROMAIN
+
+=> start again for each file in parameter
+- loop in main.c
+
