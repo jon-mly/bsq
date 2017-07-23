@@ -1,4 +1,5 @@
 #include "convert.h"
+#include "data.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -27,15 +28,8 @@ int main(int ac, char **av)
 		begin_list = init_chained(fd);
 		delete_first_line(begin_list);
 		current_object = *begin_list;
-//		while (current_object)
-//		{
-//			write(1, &current_object->c, 1);
-//			current_object = current_object->next;
-//		}
 		int x_max = get_x_max(begin_list);
 		int y_max = get_y_max(begin_list);
-//		printf("x: %d, y: %d\n", x_max, y_max);
-
 		tab = convert_chained(begin_list, x_max, y_max);
 		while (y < y_max)
 		{
