@@ -6,14 +6,11 @@
 /*   By: jmlynarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/23 22:09:05 by jmlynarc          #+#    #+#             */
-/*   Updated: 2017/07/23 22:38:59 by jmlynarc         ###   ########.fr       */
+/*   Updated: 2017/07/24 10:38:01 by jmlynarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.h"
-
-
-#include <stdio.h>
+#include "grid_error.h"
 
 extern char		g_empty;
 extern char		g_obstacle;
@@ -28,7 +25,7 @@ int			correct_chars(t_list **begin_list)
 	while (current_object)
 	{
 		c = current_object->c;
-		if (c != g_empty || c != g_obstacle || c != '\n')
+		if (c != g_empty && c != g_obstacle && c != '\n')
 			return (0);
 		current_object = current_object->next;
 	}
@@ -67,10 +64,6 @@ int			correct_size(t_list **begin_list)
 
 int			grid_is_correct(t_list **begin_list, int x_max)
 {
-	printf("%d\n", correct_chars(begin_list));
-	printf("%d\n", correct_line_length(begin_list, x_max));
-	printf("%d\n", correct_size(begin_list));
-
 	if (correct_chars(begin_list)
 			&& correct_line_length(begin_list, x_max)
 			&& correct_size(begin_list))

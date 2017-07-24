@@ -1,23 +1,24 @@
 Last pb :
-- grid_error func not fully working, check a.out output
+- Cas de grille 1
 
 
 BSQ :
 
-================================================== OK
+================================================== NOPE
 - get the input from a file or the standard input
-* either ac > 1, either read from stdin
+* either ac > 1							OK
+* either read from stdin				NOPE
 
 ================================================== OK
 - translate the input into a chained list
 * main -> init_chained
 
-================================================= NOPE
+================================================= NOPE - BUG
 - check that the data are correct
 => identify chars used					OK
-=> size min is good						NOPE
-=> each char matches the used ones		NOPE
-=> each line has the same length		NOPE
+=> size min is good						NOPE when should return 0
+=> each char matches the used ones		OK
+=> each line has the same length		OK
 
 ================================================= OK
 - mesure the size (length & height) of the grid from the chained list with \n
@@ -46,7 +47,7 @@ with 'x' or whatever
 
 =============================================== NOPE
 - display the grid on stdout
-=> FUNCTION NEEDED to print the grid => ROMAIN
+=> FUNCTION NEEDED to print the grid
 
 =============================================== NOPE
 => start again for each file in parameter
