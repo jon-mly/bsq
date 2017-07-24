@@ -7,7 +7,7 @@ BSQ :
 ================================================== NOPE
 - get the input from a file or the standard input
 * either ac > 1							OK
-* either read from stdin				NOPE
+* either read from stdin				NOPE if multiple files (cat x, y)
 
 ================================================== OK
 - translate the input into a chained list

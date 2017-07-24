@@ -6,11 +6,14 @@
 /*   By: jmlynarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/23 22:09:05 by jmlynarc          #+#    #+#             */
-/*   Updated: 2017/07/24 10:38:01 by jmlynarc         ###   ########.fr       */
+/*   Updated: 2017/07/24 13:32:54 by jmlynarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "grid_error.h"
+
+#include <stdio.h>
+
 
 extern char		g_empty;
 extern char		g_obstacle;

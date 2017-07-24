@@ -1,6 +1,7 @@
 #include "convert.h"
 #include "data.h"
 #include "grid_error.h"
+#include "resolution.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -30,17 +31,17 @@ int main(int ac, char **av)
 	i = 0;
 
 
-	if (ac < 2)
+	if (ac == 1)
 	{
 		begin_list = init_chained(0);
 		get_chars(begin_list);
+		delete_first_line(begin_list);
 		x_max = get_x_max(begin_list);
 		delete_first_line(begin_list);
 		if (grid_is_correct(begin_list, x_max))
 			write(1, "OK\n", 3);
 		y_max = get_y_max(begin_list);
 		tab = convert_chained(begin_list, x_max, y_max);
-
 		while (y < y_max)
 		{
 			x = 0;
@@ -62,12 +63,12 @@ int main(int ac, char **av)
 		get_chars(begin_list);
 		delete_first_line(begin_list);
 		x_max = get_x_max(begin_list);
-		delete_first_line(begin_list);
 		if (grid_is_correct(begin_list, x_max))
 			write(1, "OK\n", 3);
-		int y_max = get_y_max(begin_list);
+		y_max = get_y_max(begin_list);
 		tab = convert_chained(begin_list, x_max, y_max);
-
+		find_square(tab, x_max, y_max);
+		y = 0;
 		while (y < y_max)
 		{
 			x = 0;
